@@ -1,0 +1,74 @@
+Id,Name,Shape Library,Page ID,Contained By,Group,Line Source,Line Destination,Source Arrow,Destination Arrow,Status,Text Area 1,Text Area 2,Text Area 3,Text Area 4
+1,Document,,,,,,,,,Draft,UML class diagram,,,
+2,Page,,,,,,,,,,UML class diagram,,,
+3,Class,UML,2,,,,,,,,Class one,"​-attribute one
+-attribute two
+-attribute  three
+-attribute four","​+method one
+-method two",
+4,Class,UML,2,,,,,,,,Class three,"​-attribute one
+-attribute two
+-attribute  three
+-attribute four","​+method one
+-method two
+#method three",
+5,Class,UML,2,,,,,,,,Class four,"​-attribute one
+-attribute two
+-attribute  three
+-attribute four","​+method one
+-method two",
+6,Class,UML,2,,,,,,,,Class five,"​-attribute one
+-attribute two
+-attribute three
+-attribute four","#method one
+-method two",
+7,Class,UML,2,,,,,,,,Class six,"​-attribute one
+-attribute two
+-attribute  three
+-attribute four","​+method one
+-method two",
+8,Class,UML,2,,,,,,,,Class eight,"​-attribute one
+-attribute two
+-attribute  three
+-attribute four
+","​+method one
+-method two",
+9,Class,UML,2,,,,,,,,"<<interface>>
+Interface","​+ operation1(params):returnType
+- operation2(params)
+- operation3()",,
+10,Class,UML,2,,,,,,,,Class two,"​-attribute one
+-attribute two
+",,
+11,Class,UML,2,,,,,,,,Class seven,"​-attribute one
+-attribute two
+-attribute three
+-attribute four","#method one
+-method two",
+12,Rounded Rectangle Container,Flowchart Shapes,2,,31,,,,,,,,,
+13,Text,Standard,2,12,31,,,,,,Learn about this template,,,
+14,Text,Standard,2,12,31,,,,,,"UML Class Diagram Tutorials (Hold Shift + ⌘ or Ctrl, then click)",,,
+15,Button,UI Mockups,2,12,31,,,,,,Watch a UML class diagram tutorial,,,
+16,Button,UI Mockups,2,12,31,,,,,,Watch Lucidchart basic tutorials,,,
+17,User Image,User Images,2,12,31,,,,,,,,,
+18,MinimalTextBlock,Standard,2,12,31,,,,,,"UML class diagrams map out the structure of a particular system by modeling its classes, attributes, operations, and relationships between objects.   To customize this template:
+Add text to a shape by double-clicking any text and typing.
+Add and remove class shapes on the canvas.
+Update cardinality:
+Click on a line and navigate to the properties bar to adjust the endpoints.
+Click on a line and hover over the gear icon to add multiplicities.
+Add additional lines by hovering over a shape and clicking the red dot.",,,
+19,Text,Standard,2,,32,,,,,,UML class diagram,,,
+20,Text,Standard,2,,32,,,,,,"Google Doc  |  November 11, 2022",,,
+21,Diagram Key,Standard,2,,,,,,,,Diagram Key,Class,Interface,Other
+22,Line,,2,,,3,4,None,None,,0..*,1..*,,
+23,Line,,2,,,4,7,Composition,None,,has a,1,0..*,
+24,Line,,2,,,9,7,Generalization,None,,,,,
+25,Line,,2,,,5,4,Generalization,None,,,,,
+26,Line,,2,,,5,6,Generalization,None,,,,,
+27,Line,,2,,,8,9,None,Generalization,,,,,
+28,Line,,2,,,22,10,None,None,,,,,
+29,Line,,2,,,11,6,None,Aggregation,,1,,,
+30,Line,,2,,32,19,19,None,None,,,,,
+31,Group 1,,2,,,,,,,,,,,
+32,Group 2,,2,,,,,,,,,,,

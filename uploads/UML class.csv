@@ -1,0 +1,19 @@
+Id,Name,Shape Library,Page ID,Contained By,Group,Line Source,Line Destination,Source Arrow,Destination Arrow,Status,Text Area 1,Text Area 2,Text Area 3,Comments
+1,Document,,,,,,,,,Draft,UML class,,,
+2,Page,,,,,,,,,,UML Class,,,
+3,Class,UML,2,,,,,,,,Class,"​+ attribute1:type = defaultValue
++ attribute2:type
+- attribute3:type","​+ operation1(params):returnType
+- operation2(params)
+- operation3()",
+4,Class,UML,2,,,,,,,,"<<interface>>
+Interface","​+ operation1(params):returnType
+- operation2(params)
+- operation3()",,
+5,Class,UML,2,,,,,,,,<<interface>>A1,"​+ operation1(params):returnType
+- operation2(params)
+- operation3()",,
+6,Class,UML,2,,,,,,,,<<interface>>Abstract Class,​+print(),,
+7,Line,,2,,,3,6,None,Aggregation,,,,,
+8,Line,,2,,,4,3,None,Composition,,,,,
+9,Line,,2,,,5,3,Arrow,None,,,,,

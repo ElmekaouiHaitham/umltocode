@@ -1,0 +1,246 @@
+pre {
+  margin: auto;
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  border-left: 3px solid #f36d33;
+  color: #666;
+  page-break-inside: avoid;
+  font-family: monospace;
+  font-size: 15px;
+  line-height: 1.6;
+  width: fit-content;
+  overflow: auto;
+  display: block;
+  word-wrap: break-word;
+}
+b
+/* === Wrapper Styles === */
+#FileUpload {
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  margin: 30px;
+  padding: 10px;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  border-radius: 10px;
+  background-color: white;
+  width: 415px;
+}
+
+/* === Upload Box === */
+.upload {
+  margin: 10px;
+  height: 85px;
+  border: 8px dashed #e6f5e9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+.upload p {
+  margin-top: 12px;
+  line-height: 0;
+  font-size: 22px;
+  color: #0c3214;
+  letter-spacing: 1.5px;
+}
+.upload__button {
+  background-color: #e6f5e9;
+  border-radius: 10px;
+  padding: 0px 8px 0px 10px;
+}
+.upload__button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+/* === Uploaded Files === */
+.uploaded {
+  width: 375px;
+  margin: 10px;
+  background-color: #e6f5e9;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.file {
+  display: flex;
+  flex-direction: column;
+}
+.file__name {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 300px;
+  line-height: 0;
+  color: #0c3214;
+  font-size: 18px;
+  letter-spacing: 1.5px;
+}
+.fa-times:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.fa-file-pdf {
+  padding: 15px;
+  font-size: 40px;
+  color: #0c3214;
+}
+.input_container {
+  border: 1px solid #e5e5e5;
+}
+
+input[type="file"]::file-selector-button {
+  background-color: rgba(255, 255, 255, 0);
+  color: #000;
+  border: 0px;
+  border-right: 1px solid #e5e5e5;
+  padding: 10px 15px;
+  margin-right: 20px;
+  transition: 0.5s;
+}
+
+
+input[type="file"]::file-selector-button:hover {
+  background-color: rgba(238, 238, 238, 0);
+  border: 0px;
+  border-right: 1px solid #e5e5e5;
+}
+
+/* Style The Dropdown Button */
+.dropbtn {
+  background-color: #ffffff00;
+  color: rgba(255, 255, 255, 0);
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  background-color: #ffffff00;
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff00;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  background-color: #ffffff00;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #fffdfd00;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+  background-color: #ffffff00;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #ffffff00;
+}
+
+select {
+  margin: 50px;
+  width: 150px;
+  padding: 5px 35px 5px 5px;
+  font-size: 16px;
+  border: none;
+  background-color: #ffffff00;
+  height: 34px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* background: url(https://stackoverflow.com/favicon.ico) 96% / 15% no-repeat
+    #eee; */
+}
+
+/* CAUTION: Internet Explorer hackery ahead */
+
+select::-ms-expand {
+  display: none; /* Remove default arrow in Internet Explorer 10 and 11 */
+  background-color: #ffffff00;
+}
+
+/* Target Internet Explorer 9 to undo the custom arrow */
+@media screen and (min-width: 0\0) {
+  select {
+    background: none\9;
+    padding: 5px\9;
+    background-color: #ffffff00;
+  }
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+select option {
+  background: rgba(0, 0, 0, 0.3);
+  color: rgb(0, 0, 0);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
