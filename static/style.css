@@ -1,6 +1,8 @@
 pre {
   margin: auto;
-  background: #f4f4f4;
+  margin-top: 1%;
+  background: #b7b3b3;
+  border-radius: 10px;
   border: 1px solid #ddd;
   border-left: 3px solid #f36d33;
   color: #666;
@@ -8,13 +10,12 @@ pre {
   font-family: monospace;
   font-size: 15px;
   line-height: 1.6;
-  width: fit-content;
+  width: 40em;
   overflow: auto;
   display: block;
   word-wrap: break-word;
 }
-b
-/* === Wrapper Styles === */
+
 #FileUpload {
   display: flex;
   justify-content: center;
@@ -29,7 +30,6 @@ b
   width: 415px;
 }
 
-/* === Upload Box === */
 .upload {
   margin: 10px;
   height: 85px;
@@ -39,6 +39,7 @@ b
   align-items: center;
   border-radius: 5px;
 }
+
 .upload p {
   margin-top: 12px;
   line-height: 0;
@@ -46,17 +47,18 @@ b
   color: #0c3214;
   letter-spacing: 1.5px;
 }
+
 .upload__button {
   background-color: #e6f5e9;
   border-radius: 10px;
   padding: 0px 8px 0px 10px;
 }
+
 .upload__button:hover {
   cursor: pointer;
   opacity: 0.8;
 }
 
-/* === Uploaded Files === */
 .uploaded {
   width: 375px;
   margin: 10px;

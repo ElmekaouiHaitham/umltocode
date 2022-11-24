@@ -11,7 +11,7 @@ class Method:
 
         self.progLang = progLang
 
-        self.visibility = Visibility.getVisibility(methodString[0])
+        self.visibility = Visibility.getVisibility(methodString)
 
         methodString = methodString[1:]
 

@@ -8,7 +8,7 @@ class Field:
 
         self.progLang = progLang
 
-        self.visibility = Visibility.getVisibility(fieldString[0])
+        self.visibility = Visibility.getVisibility(fieldString)
 
         fieldString = fieldString[1:]
         # check if there a default value
@@ -22,6 +22,7 @@ class Field:
         except:
             error = f"problem at {fieldString}"
             raise Exception(error)
+
 
     def __str__(self):
         if self.progLang == ProgrammingLangs.DART:

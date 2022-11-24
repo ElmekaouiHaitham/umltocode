@@ -5,7 +5,7 @@ from converter.programming_languages import ProgrammingLangs
 from converter.relation import Relation, RelationType
 from converter.super_type import SuperType
 import copy
-from converter.snippets.dart.classd import dartClassTemplate
+from converter.code.dart.class_gen import Dart
 
 
 class Class:
@@ -74,75 +74,4 @@ class Class:
             self.fields.append(Field(
                 f"-{relation.destination.name.lower()}:{relation.destination.name}", self.progLang))
 
-    def getDartSupers(self):
-        s = ''
-        classes = []
-        interfaces = []
-        for relation in self.relations:
-            if relation.RelationType == RelationType.INHERITANCE:
-                if relation.destination.type == SuperType.CLASS:
-                    classes.append(relation.destination)
-                else:
-                    interfaces.append(relation.destination)
-
-        if len(classes) != 0:
-            s += "extends "
-            s += classes[0].name
-            classes = classes[1:]
-            if len(classes) != 0:
-                s += "with "
-                for c in range(1, len(classes)):
-                    s += c.name + ","
-                s = s[:len(s)-1]
-        elif len(interfaces) != 0:
-            s += "implements "
-            for i in interfaces:
-                for m in i.methods:
-                    nm = copy.deepcopy(m)
-                    nm.superType = SuperType.CLASS
-                    self.methods.append(nm)
-                s += i.name + ","
-            s = s[:len(s)-1]
-        return s
-
-
-class Dart:
-    @staticmethod
-    def getClassCode(cl:Class):
-        return dartClassTemplate.format(name=cl.name, generalization=cl.getDartSupers(), fields=Dart.getFieldsCode(cl), methods=Dart.getMethodsCode(cl), constructorFields=Dart.getConstructorFields(cl), constructorInit=Dart.getConstructorInit(cl))
-
-    def getMethodsCode(cl:Class):
-        s = ''
-        for method in cl.methods:
-            s += str(method)
-        return indent(s, " "*4)
-
-    def getFieldsCode(cl:Class):
-        s = ''
-        for field in cl.fields:
-            s += str(field)
-
-        for relation in cl.relations:
-            if relation.RelationType == RelationType.COMPOSITION:
-                s += f'late {relation.destination.name} {relation.destination.name.lower()};'
-        return indent(s, " "*4)
-
-    def getConstructorFields(cl:Class):
-        s = ''
-        for field in cl.fields:
-            if field.defaultValue != None:
-                s += f"this.{field.name} = {field.defaultValue}, "
-            else:
-                s += f"required this.{field.name}, "
-
-
-        return s
-
-    def getConstructorInit(cl:Class):
-        s = ''
-        for relation in cl.relations:
-            if relation.RelationType == RelationType.COMPOSITION:
-                s += indent(
-                    f"// TODO: initialize {relation.destination.name.lower()}\n", " "*2)
-                s += indent(f"this.{relation.destination.name.lower()};", " "*2)
-        return indent(s, " "*4)
+    

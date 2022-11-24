@@ -1,5 +1,6 @@
 import csv
 from enum import Enum
+import io
 
 from converter._class import Class
 
@@ -29,14 +30,15 @@ class Converter :
 
     def createRelation(self, row):
         if row['Source Arrow'] == "Hollow Arrow":
-            return Relation(self.getElementById(int(row['Line Source'])),self.getElementById(int(row['Line Destination'])),RelationType.INHERITANCE)
+            return Relation(self.getElementById(int(row['Line Destination'])),self.getElementById(int(row['Line Source'])),RelationType.INHERITANCE)
         elif row['Source Arrow'] == "Composition":
             return Relation(self.getElementById(int(row['Line Source'])),self.getElementById(int(row['Line Destination'])),RelationType.COMPOSITION)
         elif row['Source Arrow'] == "Aggregation":
             return Relation(self.getElementById(int(row['Line Source'])),self.getElementById(int(row['Line Destination'])),RelationType.AGGREGATION)
 
         elif row['Destination Arrow'] == "Hollow Arrow":
-            return Relation(self.getElementById(int(row['Line Destination'])),self.getElementById(int(row['Line Source'])),RelationType.INHERITANCE)
+
+            return Relation(self.getElementById(int(row['Line Source'])),self.getElementById(int(row['Line Destination'])),RelationType.INHERITANCE)
         elif row['Destination Arrow'] == "Composition":
             return Relation(self.getElementById(int(row['Line Destination'])),self.getElementById(int(row['Line Source'])),RelationType.COMPOSITION)
         elif row['Destination Arrow'] == "Aggregation":
@@ -63,7 +65,10 @@ class Converter :
                         self.elements.append(self.createInterface(row))
                     else:
                         self.elements.append(self.createClass(row))
-                elif row["Name"] == "Line":
+        with open(path) as csv_file:
+            csv_reader = csv.DictReader(csv_file, delimiter=',')
+            for row in csv_reader:
+                if row["Name"] == "Line":
                     self.addRelation(self.createRelation(row))
         return self.elements
 
